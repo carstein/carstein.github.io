@@ -1,3 +1,5 @@
 name: Michal Melewski, aspiring fashion blogger
 markdown: kramdown
 highlighter: rouge
+syntax_highlighter_opts:
+  css_class: 'highlight'
