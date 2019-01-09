@@ -19,7 +19,7 @@ nav ul li, footer ul li {
 
 a {
     text-decoration: none;
-    color: #999;
+    color: #396A00;
 }
 a:hover {
     text-decoration: underline;
@@ -79,6 +79,5 @@ ul.posts li {
 code {
     font-family: 'Inconsolata', monospace;
     font-size: 1.1em;
+    color: #276A8A;
 }
-
-.
