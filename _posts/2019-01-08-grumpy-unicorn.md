@@ -6,17 +6,17 @@ date: 2019-01-08
 # Intro
 Last few evenings I've spent playing with Unicorn Engine. Well, last few is a figure of speech here, as I was planing to write this text long time ago.
 Anyhow, I just sit down to learn it bit more because I never really had a chance to develop better understanding and flow when it comes to this engine. 
-In the end I've solved three optimization challenges and one obfuscation problem. I've also read some code written by other people (hi gynvael). That does not make me an expert. Far from it. I, however learned something about it and I'm ready to complain.
+In the end I've solved three optimization challenges and one obfuscation problem. I've also read some code written by other people ([hi gynvael](https://gynvael.coldwind.pl/?blog=1)). That does not make me an expert. Far from it. I, however learned something about it and I'm ready to complain.
 
 # What is wrong with the engine,
 Ultimately there is nothing wrong - engine works well (minus some weird quirks in interpreting some instructions, but if I remember correctly this should be attributed to QEMU).
 People I've talked about comaplained about speed of execution, but in my cases it wasn't an important factor. What is more I haven't done any proper benchmarking, so I really don't have an informed opinion. Well, to be honest I see one place where execution slows down, but this is just an assumption. More of that later.
 
-So, why this section even mentiones wrongness in the first place? Well, because there is a lot of wrong (in my opinion) in what API offers, how it works and how some things are structured. I'm not even going to start about documentation, because at least there are some code samples covering wide array of functionality that one can read. Still, proper documentation like for example provide by Binary Ninja would be nice.
+So, why this section even mentiones wrongness in the first place? Well, because there is a lot of wrong (in my opinion) in what API offers, how it works and how some things are structured. I'm not even going to start about documentation, because at least there are some code samples covering wide array of functionality that one can read. Still, proper documentation like for example one provided by [Binary Ninja](https://api.binary.ninja). would be nice.
 
 ## Superflous const naming
 I'm not a big fan of typical style of imports where you pollute main namespace with all possible functions and classes like `from unicorn import all`.
-Style I'm accustomed to the most comes from our python styleguide, therefore if there is no proper module nesting I can always do `import unicorn` and when creating classes etc. I know where everything comes from.
+Style I'm accustomed to the most comes from our [python styleguide](http://http://google.github.io/styleguide/pyguide.html), therefore if there is no proper module nesting I can always do `import unicorn` and when creating classes etc. I know where everything comes from.
 Now, what I like about Unicorn is that constants have their own namespace. Even better, every architecture has their own namespace for const. And while they do, why oh why are they named with architecture prefix. Let me explain with this tiny code sample:
 
 ```python
