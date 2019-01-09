@@ -67,7 +67,7 @@ Not only you have to maintain a list of instructions to skip but also you have t
 ## Hooks.
 The worst thing in my personal opinion is how we are forced to use hooks. For every type of hook you define one global callback function. One.
 Now, let's say you want to do three different operations in three distinc addresses - of course we all know how this is going to look in the code - tree of ifs.
-Typical example of this situation we can for example observe in Unicorn tutorial by Eternal Red:
+Typical example of this situation we can for example observe in Unicorn [tutorial](http://eternal.red/2018/unicorn-engine-tutorial/) by Eternal Red:
 ```python
 if address in skip_list:
   engine.reg_write(const.UC_X86_REG_RIP, address+size)
