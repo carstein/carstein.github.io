@@ -35,6 +35,18 @@ h1.title {
   font-size: 3em;
   color: #991f00;
   margin: 0;
+  position: relative;
+  left: -1em;
+}
+
+.title a {
+  color: #333;
+  font-weight: normal;
+}
+
+.title a:hover {
+  text-decoration: none;
+  font-weight: bold;
 }
 
 p {
