@@ -15,7 +15,7 @@ People I've talked about comaplained about speed of execution, but in my cases i
 So, why this section even mentiones wrongness in the first place? Well, because there is a lot of wrong (in my opinion) in what API offers, how it works and how some things are structured. I'm not even going to start about documentation, because at least there are some code samples covering wide array of functionality that one can read. Still, proper documentation like for example provide by Binary Ninja would be nice.
 
 ## Superflous const naming
-I'm not a big fan of typical style of imports where you pollute main namespace with all possible functions and classes like ` from unicorn import all`.
+I'm not a big fan of typical style of imports where you pollute main namespace with all possible functions and classes like `from unicorn import all`.
 Style I'm accustomed to the most comes from our python styleguide, therefore if there is no proper module nesting I can always do `import unicorn` and when creating classes etc. I know where everything comes from.
 Now, what I like about Unicorn is that constants have their own namespace. Even better, every architecture has their own namespace for const. And while they do, why oh why are they named with architecture prefix. Let me explain with this tiny code sample:
 
