@@ -32,6 +32,12 @@ h1 {
 }
 
 h1.title {
+    font-size: 3em;
+    color: #991f00;
+    margin: 0;
+  }
+
+h1.post_title {
   font-size: 3em;
   color: #991f00;
   margin: 0;
@@ -39,12 +45,12 @@ h1.title {
   left: -1em;
 }
 
-.title a {
+.post_title a {
   color: #333;
   font-weight: normal;
 }
 
-.title a:hover {
+.post_title a:hover {
   text-decoration: none;
   font-weight: bold;
 }
@@ -67,6 +73,9 @@ footer {
     font-size: .8em;
 }
 
+
+/* Styles for posts list */
+
 ul.posts { 
     margin: 20px auto 40px; 
     font-size: 1.5em;
@@ -76,6 +85,22 @@ ul.posts li {
     list-style: none;
 }
 
+ul.posts a {
+    color: #333;
+    text-decoration: none;
+}
+
+ul.posts a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.post_date {
+    color: #333;
+    float: right;
+}
+
+/* Main Code style */
 code {
     font-family: 'Inconsolata', monospace;
     font-size: 1.1em;
