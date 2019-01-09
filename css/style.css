@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
 body {
     margin: 60px auto;
     width: 70%;
+    font-family: 'Lato', sans-serif;
 }
 nav ul, footer ul {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    font-family: 'Lato', sans-serif;
     padding: 0px;
     list-style: none;
     font-weight: bold;
@@ -21,10 +25,11 @@ a:hover {
 }
 h1 {
     font-size: 3em;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
 }
 p {
-    font-size: 1.5em;
+    font-size: 1.4em;
     line-height: 1.4em;
     color: #333;
 }
@@ -40,5 +45,10 @@ ul.posts {
 
 ul.posts li {
     list-style: none;
+}
+
+code {
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.3em;
 }
 
