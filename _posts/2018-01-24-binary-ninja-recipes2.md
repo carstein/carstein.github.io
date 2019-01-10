@@ -11,7 +11,7 @@ Let's say we want to track the state of a given variable in a program and all st
 In BinaryNinja blocks of a given function are available through an array. Let's take a look at the example bellow
 
 ![Function Graph]({{site.url}}/assets/images/blocks_2.png)
-
+/home/carstein/Blog/carstein.github.io/assets/images/blocks_2.png
 So now we access those blocks programmatically:
 
 ```python
