@@ -92,7 +92,6 @@ ul.posts a {
 }
 
 ul.posts a:hover {
-    text-decoration: underline;
     font-weight: bold;
 }
 
