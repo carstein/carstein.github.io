@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Worth listening too"
+title: "Worth listening to"
 date: 2019-03-20
 ---
 
