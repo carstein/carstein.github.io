@@ -19,7 +19,12 @@ nav ul li, footer ul li {
 
 .post a {
     text-decoration: none;
+    color: #333;
     border-bottom: #333 0.125em dashed;
+}
+
+.post a:visited {
+  border-bottom: #a9a9a9 0.125em dashed;
 }
 
 h1 {
