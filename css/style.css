@@ -52,6 +52,7 @@ h1.post_title {
 
 .post_title a {
   color: #333;
+  text-decoration: none;
   font-weight: normal;
 }
 
