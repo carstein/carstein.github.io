@@ -81,8 +81,7 @@ footer {
     font-size: .8em;
 }
 
-/* footer */
-.footer a {
+footer a {
   text-decoration: none;
   font-weigth: bold;
   color: #333;
