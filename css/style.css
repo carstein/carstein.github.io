@@ -17,12 +17,9 @@ nav ul li, footer ul li {
     margin-right: 20px;
 }
 
-a {
+.post a {
     text-decoration: none;
-    color: #5A7F0F;
-}
-a:hover {
-    text-decoration: underline;
+    border-bottom: #333 0.125em dashed;
 }
 
 h1 {
@@ -79,6 +76,12 @@ footer {
     font-size: .8em;
 }
 
+/* footer */
+.footer a {
+  text-decoration: none;
+  font-weigth: bold;
+  color: #333;
+}
 
 /* Styles for posts list */
 
