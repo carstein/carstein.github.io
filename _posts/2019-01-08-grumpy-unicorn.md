@@ -26,7 +26,7 @@ import unicorn.x86_const as const
 engine.reg_write(const.UC_X86_REG_RAX, ret_rax)
 ...
 ```
-So, I've imported `x86_const` - I know that RAX register constant comes from Unicorn and from x86_const. I don't wan to write UC_X86_REG_RAX every time I want to access it.
+So, I've imported `x86_const` - I know that RAX register constant comes from Unicorn and from x86_const. I don't wan to write `UC_X86_REG_RAX` every time I want to access it.
 I know this is just a tiny inconvinience and pretty much after typing it once any reasonable editor will complete it for you but still, this can be improved.
 
 
@@ -50,7 +50,7 @@ engine.mem_write(BASE, read_prog(sys.argv[1]))
 engine.emu_start(START, STOP)
 ```
 
-All values like BASE, SIZE, START and STOP you have to retrieve manually by reading the header either via `readelf` or throwing given binary into your reverse engineering platform of choice.
+All values like `BASE`, `SIZE`, `START` and `STOP` you have to retrieve manually by reading the header either via `readelf` or throwing given binary into your reverse engineering platform of choice.
 This is tedious and I would really love some nice helper functions. It can be either high level like `load_elf()` or some medium level shortcut methods of Uc engine like `setup_stack(bottom, top)`. 
 
 Another thing that really annoys me is how sometimes we need to skip certain instructions, because either they are making a call to a shared library (that we obviously have not loaded) or perform some IO operations. Typical code doing such task looks like this:
