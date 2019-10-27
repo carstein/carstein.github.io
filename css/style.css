@@ -3,7 +3,7 @@
 
 body {
     margin: 60px auto;
-    width: 70%;
+    width: 60%;
     font-family: 'Lato', sans-serif;
 }
 nav ul, footer ul {
@@ -62,7 +62,7 @@ h1.post_title {
 
 p {
     font-size: 1.1em;
-    line-height: 1.3em;
+    line-height: 1.4em;
     color: #333;
 }
 
@@ -85,7 +85,7 @@ footer {
 }
 
 footer a {
-  font-weigth: bold;
+  font-weight: bold;
   color: #333;
 }
 
