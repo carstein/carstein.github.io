@@ -158,7 +158,7 @@ ViewType.registerViewType(SampleViewType())
 
 It's best to start the analysis from the end. First thing our plugin does is registering itself via `ViewType.registerViewType`. What are we registering is a type of view - this does not have any code responsible for displaying things we might want to display but it acts as some sort of persistence layer of a sort (again, without proper documentation I'm just guessing).  This view type needs to implement two important method - `create()` and `getPriority()`. First one is obvious - it is responsible for creating and *actual* view and the second I have no idea, but if you  miss some mandatory method your plugin won't work and binary ninja window will remain impossible to close.
 
-Last and most important things we need to implement is the view where we will display something later on. As previously - there are few mandatory method you need to implement and your plugin won't work without them or will crash when you try to conduct some actions. With my current code I get away with getData() and getCurrentOffset() but there are few more that I saw in other example. Let's leave them for some other time.
+Last and most important things we need to implement is the `SampleView` where we will display our widgets later on. As previously - there are few mandatory method you need to implement and your plugin won't work without them or will crash when you try to conduct some actions. With my current code I get away with `getData()` and `getCurrentOffset()` but there are few more that I saw in other example. Let's leave them for some other time.
 
 # Closing words
 
