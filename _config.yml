@@ -1,4 +1,10 @@
-name: Michal Melewski, aspiring fashion blogger
+title: 128 nops and counting
+email: michal.melewski@gmail.com
+description:
+  I blog about random security related topics,
+  binary ninja stuff,
+  all hope is lost.
+url: https://carstein.github.com
 markdown: kramdown
 highlighter: rouge
 syntax_highlighter_opts:
