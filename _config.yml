@@ -4,8 +4,10 @@ description:
   I blog about random security related topics,
   binary ninja stuff,
   all hope is lost.
-url: https://carstein.github.com
+url: https://carstein.github.io
 markdown: kramdown
 highlighter: rouge
 syntax_highlighter_opts:
   css_class: 'highlight'
+plugins:
+- jekyll-feed
