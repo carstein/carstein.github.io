@@ -6,7 +6,7 @@ date: 2020-05-02
 
 Welcome to part three of my mini series about fuzzing.  I'm glad that so many of you find this content interesting enough to come back for more. This, more than anything encourages me to keep writing.
 
-We've ended the last part with a promise that we are going to work on a more intelligent approach to fuzzing. To keep content easily digestible I've decided to split the task into two separate articles. In the one you are reading right now we are going to cover the implementation of coverage tracing. Upcoming one will cover the topic of how this information can help to guide the fuzzing process to obtain better results.
+We've ended the [last part](https://carstein.github.io/2020/04/25/writing-simple-fuzzer-2.html) with a promise that we are going to work on a more intelligent approach to fuzzing. To keep content easily digestible I've decided to split the task into two separate articles. In the one you are reading right now we are going to cover the implementation of coverage tracing. Upcoming one will cover the topic of how this information can help to guide the fuzzing process to obtain better results.
 
 We must begin with a bit of [theory](https://google.github.io/clusterfuzz/reference/coverage-guided-vs-blackbox/): *"Coverage guided fuzzing (also known as greybox fuzzing) uses program instrumentation to trace the code coverage reached by each input fed to a [fuzz target](https://google.github.io/clusterfuzz/reference/glossary/#fuzz-target). [Fuzzing engines](https://google.github.io/clusterfuzz/reference/glossary/#fuzzing-engine) use this information to make informed decisions about which inputs to mutate to maximize coverage."* As explained further in the linked doc this technique is good for deterministic targets with suitable tolerance for unstructured data. A good example of such is a parser for *jpeg* format. This matches the target we've initially selected. Be aware however that random mutations of highly structured inputs like programming languages will most likely fail to produce valid data. Consequently the depth of the fuzz run will suffer in effect.
 
@@ -172,3 +172,7 @@ On top of that, before we have a feedback loop implemented I'm not sure our gran
 Sadly, implementing our instrumentation caused some major performance hit. We went down from ~300  down to ~50 exec/sec. Looks like we just managed to slow down our fuzzer 6 times and gained nothing in return. 
 
 As promised in the next part we will attempt to recover from that situation by completely changing our mutation strategy. This will turn our fuzzer into a coverage driven one with genetic algorithms deciding which mutated files to discard and which to keep for further mutation. I hope we can discover some new bugs with that approach.
+
+# References
+ - Code for this part is available [here](https://github.com/carstein/vsf/releases/tag/v3)
+ - Next part of the series is available [here](https://carstein.github.io/2020/05/21/writing-simple-fuzzer-4.html)

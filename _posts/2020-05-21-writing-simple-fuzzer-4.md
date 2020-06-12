@@ -7,7 +7,7 @@ date: 2020-05-21
 
 The right way to start this part is by apologizing to all of you who waited so long for it. I had a pretty busy and yet not terribly productive week. Result was a grave need for rest and reset - that caused a delay in writing this blog post. Thank you all for the patience and I hope you will enjoy the fourth part of *Build your own fuzzer* series.
 
-In the previous part we've added some instrumentation that allowed us to track the execution coverage. This cost us a lot of performance but it was a necessary sacrifice as the coverage is an essential part of the next iteration of our fuzzer. In the end we want it to be able to select most promising samples for further mutation and discard ones that we considered inferior. So, in essence, "[it's evolution, baby](https://www.youtube.com/watch?v=aDaOgu2CQtI)".
+In the [previous part](https://carstein.github.io/2020/05/02/writing-simple-fuzzer-3.html) we've added some instrumentation that allowed us to track the execution coverage. This cost us a lot of performance but it was a necessary sacrifice as the coverage is an essential part of the next iteration of our fuzzer. In the end we want it to be able to select most promising samples for further mutation and discard ones that we considered inferior. So, in essence, "[it's evolution, baby](https://www.youtube.com/watch?v=aDaOgu2CQtI)".
 
 As always, I will be presenting relevant code fragments but for the sake of space conservation some boring parts will be skipped. Full code, if you are inclined to read it is available at my [github](https://github.com/carstein/vsf). Eventually commits will be tagged properly and links will point to a version of fuzzer relevant for a given part of the series.
 
@@ -217,3 +217,5 @@ Goes without saying that it still has many drawbacks - speed is just atrocious a
 
 Quite frankly I'm not sure what else I should add here and should there be any subsequent parts. Don't get me wrong - there are tons of improvements we can add. We can rewrite it to some decent language, implement better instrumentation or improve our mutator. If you have any good ideas please do not hesitate to reach out to me - my twitter address is just below. There is nothing better than getting a message from a happy reader.
 
+# References
+ - Code for this part is available [here](https://github.com/carstein/vsf/releases/tag/v4)

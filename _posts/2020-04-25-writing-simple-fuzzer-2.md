@@ -155,7 +155,6 @@ There is one potential issue with this simplistic approach. We are only going to
 
 I'm sure many of you expected more substantial changes to the fuzzer in this part. I understand that but please, do not despair. In the next part we will actually implement something more interesting - simple coverage measuring support. With that in place we can embark on even more ambitious adventures - genetic algorithm that will try to gradually select and mutate our samples to discover new crashes in yet unexplored parts of the program. Well, at least that is the plan for two parts. Later - we will see.
 
-
-
-
-
+# References
+ - Code for this part is available [here](https://github.com/carstein/vsf/releases/tag/v2)
+ - Next part of the series is available [here](https://carstein.github.io/2020/05/02/writing-simple-fuzzer-3.html)
