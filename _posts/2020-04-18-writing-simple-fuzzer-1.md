@@ -151,6 +151,6 @@ When I ran my fuzzer I got 7810 crashes after only 100 000 iterations (by the wa
 Right now our fuzzer is solely based on luck - it might modify the right bytes but it very well might not. In case of easy target like our exif library it clearly is enough, but will most likely fall short for harder ones. In part three I will try to implement some basic code coverage measurement to see if given changes in the sample file lead to more code being covered by our fuzzer.
 
 # References
- - Code for this part is available [here]https://github.com/carstein/vsf/releases/tag/v1)
+ - Code for this part is available [here](https://github.com/carstein/vsf/releases/tag/v1)
  - Next part of the series is available [here](https://carstein.github.io/2020/04/25/writing-simple-fuzzer-2.html) 
 
