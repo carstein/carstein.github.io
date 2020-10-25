@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
-@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+@import url('https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css');
+
 
 body {
     margin: 60px auto;
@@ -116,14 +117,14 @@ ul.posts a:hover {
 
 /* Main Code style */
 code {
-    font-family: 'Inconsolata', monospace;
-    font-size: 1.1em;
+    font-family: Hack, monospace;
+    font-size: 1.0em;
     color: #276A8A;
 }
 
 code.highlighter-rouge {
-  background-color: #5f626a;
-  color: white;
-  padding: 2px 3px 2px;
+  background-color: #d4d5da;
+  color: black;
+  padding: 1px 2px 1px;
   border-radius: 0.3rem;
 }
