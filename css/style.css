@@ -31,7 +31,7 @@ a {
   border-bottom: #a9a9a9 0.125em dashed;
 }
 
-sup > a {
+a.footnote {
   border-bottom: none;
   padding-left: 0.2em;
 }
