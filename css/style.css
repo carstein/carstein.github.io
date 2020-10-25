@@ -36,6 +36,10 @@ sup > a {
   padding-left: 0.2em;
 }
 
+a.reversefootnote {
+  border-bottom: none;
+}
+
 h1 {
     font-size: 2em;
     font-family: 'Lato', sans-serif;
