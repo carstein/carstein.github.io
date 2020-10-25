@@ -126,10 +126,10 @@ Later on in line `#5` we extract all variables being read (in opposition to bein
 
 I am well aware that example I've showed above is just a toy one and we haven't touched many aspects of SSA like inspecting version and working with Φ nodes but my goal here was different - to get you hooked on the power of SSA. Where you go from here is up to you.
 
-I've learned most about SSA and how to effectively use it from Josh Watson excellent post titled 'Vulnerability Modeling with Binary Ninja'[^2] as well as remarkable Sophia d'Antoine training 'Program Analysis for Vulnerability Research'.[^3] I highly encourage you to check both sources on your own.
+I've learned most about SSA and how to effectively use it from Josh Watson excellent post titled *"Vulnerability Modeling with Binary Ninja"*[^2] as well as remarkable Sophia d'Antoine training *"Program Analysis for Vulnerability Research"*.[^3] I highly encourage you to check both sources on your own.
 
-
+## References
 
 [^1]: This is a good idea for a separate post about Binary Ninja Recipes
-[^2]: https://blog.trailofbits.com/2018/04/04/vulnerability-modeling-with-binary-ninja/
-[^3]:  https://downloads.immunityinc.com/infiltrate2020-training/Infiltrate_Program_Analysis_for_Vulnerability_Research_Training_2020.pdf
+[^2]: [https://blog.trailofbits.com/2018/04/04/vulnerability-modeling-with-binary-ninja/](https://blog.trailofbits.com/2018/04/04/vulnerability-modeling-with-binary-ninja/)
+[^3]: [https://downloads.immunityinc.com/infiltrate2020-training/Infiltrate_Program_Analysis_for_Vulnerability_Research_Training_2020.pdf](https://downloads.immunityinc.com/infiltrate2020-training/Infiltrate_Program_Analysis_for_Vulnerability_Research_Training_2020.pdf)
