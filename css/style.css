@@ -31,9 +31,13 @@ a {
   border-bottom: #a9a9a9 0.125em dashed;
 }
 
-sup > a {
+a.footnote {
   border-bottom: none;
   padding-left: 0.2em;
+}
+
+a.reversefootnote {
+  border-bottom: none;
 }
 
 h1 {
@@ -94,6 +98,36 @@ img.center {
     margin-right: auto;
     padding: 10px;
 }
+
+/* Styling reference list */
+ol {
+  list-style: none;
+  counter-reset: ref-counter;
+}
+
+ol li {
+  counter-increment: ref-counter;
+  display: inline-flex;
+}
+
+ol li > p {
+  margin:0;
+}
+
+ol li::before {
+  content: counter(ref-counter);
+  margin-right: 0.5rem;
+  background: #000000;
+  color: white;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  line-height: 1.2em;
+}
+
+/* Footer style */
 
 footer {
     border-top: 1px solid #d5d5d5;
