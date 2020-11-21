@@ -215,8 +215,12 @@ First contact with Rust was actually quite interesting. I had small problems tra
 
 The best feature so far is the fact that return types carry much more information than in C so you don't have to use weird macros to extract exact status. Also, in Rust you can use matching and that also helps to write cleaner code.
 
+#### Update
+Full code is available on github[^4].
+
 # References
 
 [^1]: https://carstein.github.io/2020/04/18/writing-simple-fuzzer-1.html
 [^2]: https://crates.io/crates/nix
 [^3]: https://crates.io/crates/linux-personality
+[^4]: https://gist.github.com/carstein/6f4a4fdf04ec002d5494a11d2cf525c7
