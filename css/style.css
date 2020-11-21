@@ -116,7 +116,7 @@ ol {
 
 ol li {
   counter-increment: ref-counter;
-  display: inline-flex;
+  display: flex;
 }
 
 ol li > p {
