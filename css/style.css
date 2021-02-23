@@ -24,7 +24,6 @@ a {
 
 .post a {
     color: #333;
-    border-bottom: #333 0.125em dashed;
 }
 
 .post a::after {
