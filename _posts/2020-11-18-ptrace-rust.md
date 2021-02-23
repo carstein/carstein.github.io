@@ -4,7 +4,7 @@ title: "System programming with Rust"
 date: 2020-11-18
 ---
 
-Back in May I started a blog post series[^1] explaining how to write simple fuzzers. Few episodes down this path I've faced a difficult challenge - do I continue writing my fuzzer using Python or should I switch to some other, more suitable language.
+Back in May I started a blog post [series](https://carstein.github.io/2020/04/18/writing-simple-fuzzer-1.html) explaining how to write simple fuzzers. Few episodes down this path I've faced a difficult challenge - do I continue writing my fuzzer using Python or should I switch to some other, more suitable language.
 
 Sticking to Python wasn't an unpleasant idea - it is a simple language and I can use it pretty fluently. There were some big disadvantages as well. First of all, I was using an external `ptrace` library and I didn't feel like modifying it too much. I don't even want to mention speed and  concurrency issues. With full awareness that it might put me back in square one when it comes to progress I've decided to rewrite and hopefully continue the series in Rust. There was only one problem - I didn't know Rust.
 
@@ -16,7 +16,7 @@ I've always believed in sharing with a broader community, especially if you are 
 
 ## How to eat with fork
 
-I will gradually introduce certain concepts as we go, but let us begin with a main code skeleton. When it comes to external libraries we will be using, I need to mention `nix`[^2] and `linux-personality`[^3].  First one is a a collection of Rust bindings to various \*nix APIs while second will allow us to disable `ASLR` for the child process.
+I will gradually introduce certain concepts as we go, but let us begin with a main code skeleton. When it comes to external libraries we will be using, I need to mention [nix](https://crates.io/crates/nix) and [linux-personality]( https://crates.io/crates/linux-personality).  First one is a a collection of Rust bindings to various \*nix APIs while second will allow us to disable `ASLR` for the child process.
 
 ```rust
 fn main() {
@@ -178,10 +178,10 @@ Placing and restoring breakpoints is covered by two separate functions.
 ```rust
 fn set_breakpoint(pid: Pid, addr: u64) -> i64 {
     // Read 8 bytes from the process memory
-    let value = ptrace::read(pid, addr as *mut c_void).unwrap();
+    let value = ptrace::read(pid, addr as *mut c_void).unwrap() as u64;
 
     // Insert breakpoint by write new values
-    let bp = (value & (i64::MAX ^ 0xFF)) | 0xCC;
+    let bp = (value & (u64::MAX ^ 0xFF)) | 0xCC;
 
     unsafe {
         ptrace::write(pid, addr as *mut c_void, bp as *mut c_void).unwrap();
@@ -216,11 +216,4 @@ First contact with Rust was actually quite interesting. I had small problems tra
 The best feature so far is the fact that return types carry much more information than in C so you don't have to use weird macros to extract exact status. Also, in Rust you can use matching and that also helps to write cleaner code.
 
 #### Update
-Full code is available on github[^4].
-
-# References
-
-[^1]: https://carstein.github.io/2020/04/18/writing-simple-fuzzer-1.html
-[^2]: https://crates.io/crates/nix
-[^3]: https://crates.io/crates/linux-personality
-[^4]: https://gist.github.com/carstein/6f4a4fdf04ec002d5494a11d2cf525c7
+Full code is available on [github](https://gist.github.com/carstein/6f4a4fdf04ec002d5494a11d2cf525c7).
