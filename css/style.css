@@ -4,9 +4,10 @@
 
 body {
     margin: 60px auto;
-    width: 60%;
+    max-width: 80rem;
     font-family: 'Lato', sans-serif;
 }
+
 nav ul, footer ul {
     font-family: 'Lato', sans-serif;
     padding: 0px;
