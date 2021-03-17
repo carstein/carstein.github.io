@@ -4,7 +4,9 @@ title: "Build simple fuzzer - part 5"
 date: 2021-03-13
 ---
 
-It has been a while since I wrote the last part of the [Build Simple Fuzzer](https://carstein.github.io/2020/05/21/writing-simple-fuzzer-4.html) series. Due to personal reasons I had some issues finding time to continue with it. On top of that, having a semi-working[^1] fuzzer deprived me of will to continue - mainly because there were no obvious avenues where to direct my attention. I'm far from thinking that my fuzzer was good or complete. But it was working and finding shallow bugs and the next step required much more work than I was able to pour into it. At least at that time.
+It has been a while since I wrote the last part of the [Build Simple Fuzzer](https://carstein.github.io/2020/05/21/writing-simple-fuzzer-4.html) series. Due to personal reasons I had some issues finding time to continue with it. On top of that, having a semi-working fuzzer deprived me of will to continue - mainly because there were no obvious avenues where to direct my attention. I'm far from thinking that my fuzzer was good or complete. But it was working and finding shallow bugs and the next step required much more work than I was able to pour into it. At least at that time.
+
+> Well, the fuzzer was working all right and was able to find bugs in real, albeit old software. It just wasn't very professional. On top of that I have issues with confidence and always consider my work not good enough
 
 The initial language was also partially to blame. Choosing python, while making the start super easy made making a meaningful progress a bit of challenge in later phases. But, with fifteen minutes stolen here and there I've rewrote my fuzzer in Rust. Say hello to [rfuss2](https://github.com/carstein/rfuss2).
 
@@ -48,7 +50,9 @@ The premise of it is simple - the moment we provide this function with a pointer
 
 Some people might say this is not a very realistic pattern but you might be actually surprised. Compilers actually tend to implement parsing and recognizing certain keywords this way. Take a look at [Crafting Interpreters](https://craftinginterpreters.com/scanning-on-demand.html#identifiers-and-keywords) book, particularly a chapter that teaches us how to parse keywords. It turns out that a few nested `switch` statements is the fastest method to do it. Many real language parsers are using similar techniques and that makes them great for fuzzing and increasing coverage.
 
-Still, I strongly believe that to truly understand, and most importantly test your fuzzer you need to run it against that target that offers proper introspection and as few surprises as possible. Testing your tools against black box offers a very murky picture of what is actually happening - maybe you are not finding crashes because of some tiny flaw in your mutation strategy[^2]. Such flaws might easily be dismissed by assuming that program you know very little of, doesn't actually have vulnerabilities.
+Still, I strongly believe that to truly understand, and most importantly test your fuzzer you need to run it against that target that offers proper introspection and as few surprises as possible. Testing your tools against black box offers a very murky picture of what is actually happening - maybe you are not finding crashes because of some tiny flaw in your mutation strategy. Such flaws might easily be dismissed by assuming that program you know very little of, doesn't actually have vulnerabilities.
+
+> In my initial mutator I've failed to properly calculate boundaries during inserting of blocks so my mutator never actually *appended* blocks at the end of the data being mutated. Would have probably missed that if not the strong expectation of a certain result failed to be satisfied.
 
 # Main loop
 
@@ -154,6 +158,8 @@ pub struct Sample {
 
 Each `Sample` holds the data in the form of a byte array. It can be either materialized as a file,  passed to a program as an argument or even sent over the network if that is what we want to implement. Other fields are mostly used for coverage tracking - version records how many successful[^3] mutation a given sample had and method holds the latest type of mutation that occurred. Both have no practical meaning as far as mutation engine is concerned - at least for now. `Sample` that was executed by the program gains the trace generated during the run.
 
+> Successful in this case is defined as leading to new unique coverage.
+
 Samples do not exist in vacuum but are kept inside `Mutator`.
 
 ```rust
@@ -233,7 +239,7 @@ pub fn update(&mut self, samples: &Vec<Sample>) {
 
 This approach was very successful in cases like our target binary because the iterative process of mutation with a direct feedback loop was able to figure out expected data and progress with mutation until our program crashed. 
 
-![rfuss_test]({site.url}/assets/images/rfuss_test2.png){:class="center"}
+![rfuss_test]({{site.url}}/assets/images/rfuss_test2.png){:class="center"}
 
 There are however two types of drawbacks that we might experience - localized and joint changes. First case happened when I was testing `BitFlip` mutation strategy - feeding the engine with character `X` and expecting it to mutate into `A` through a single bit flip is futile endeavor as long as partial mutations are not retained. Another example would be in the case of data format with internal checksums (like [PNG](https://www.w3.org/TR/PNG-Structure.html)) - a single mutation is very unlikely to trigger new coverage as long as the checksum remains wrong.
 
@@ -242,9 +248,3 @@ There are however two types of drawbacks that we might experience - localized an
 The next parts will mostly focus on small ways to speed up the fuzzing process. We are going to work with patched binaries, performance counters and maybe even process snapshotting - everything to squeeze every bit of performance of our existing fuzzer architecture. I hope that this path will lead us to solutions like native code instrumentations. Eventually I would like to tackle a new set of targets - ones that have strict syntax validation and will require grammar fuzzing.
 
 I hope that you've enjoyed the ride so far and stay tuned for more.
-
-
-
-[^1]: Well, the fuzzer was working all right and was able to find bugs in real, albeit old software. It just wasn't very professional. On top of that I have issues with confidence and always consider my work not good enough. 
-[^2]: In my initial mutator I've failed to properly calculate boundaries during inserting of blocks so my mutator never actually *appended* blocks at the end of the data being mutated. Would have probably missed that if not the strong expectation of a certain result failed to be satisfied. 
-[^3]: Successful in this case is defined as leading to new unique coverage.
