@@ -4,19 +4,15 @@ title: "Build simple fuzzer - part 5"
 date: 2021-03-13
 ---
 
-It has been a while since I wrote the last part of the [Build Simple Fuzzer](https://carstein.github.io/2020/05/21/writing-simple-fuzzer-4.html) series. Due to personal reasons I had some issues finding time to continue with it. On top of that, having a semi-working fuzzer deprived me of will to continue - mainly because there were no obvious avenues where to direct my attention. I'm far from thinking that my fuzzer was good or complete. But it was working and finding shallow bugs and the next step required much more work than I was able to pour into it. At least at that time.
+It has been a while since I wrote the last part of the [Build Simple Fuzzer](https://carstein.github.io/2020/05/21/writing-simple-fuzzer-4.html) series. Due to personal reasons I had some issues finding time to continue with it. On top of that, having a semi-working fuzzer deprived me of will to continue - mainly because there were no obvious avenues where to direct my attention. I'm far from thinking that my fuzzer was good or complete but it was working, finding shallow bugs and the next step required much more work than I was able to pour into it. At least at that time.
 
-The initial language was also partially to blame. Choosing python, while making the start super easy made making a meaningful progress a bit of challenge in later phases. But, with fifteen minutes stolen here and there I've rewrote my fuzzer in Rust. Say hello to [rfuss2](https://github.com/carstein/rfuss2).
-
-> I really wanted to name it Rufus but there is already a project with that name. And American Fussy Lop sounded just wrong.
+The initial language was also partially to blame. Choosing python, while making the start super easy made making a meaningful progress a bit of challenge in later phases. Against the wind and with fifteen minutes stolen here and there I finally rewrote my fuzzer in Rust. Say hello to [rfuss2](https://github.com/carstein/rfuss2).
 
 Why Rust? First of all, because I wanted to be a cool hipster kid writing in some new language. However, after learning the language a bit it really grew on me - it's sufficiently close to the metal that I can express what I want to achieve and sufficiently far from C that I don't feel like clubbing pointers to make them behave. In all seriousness - Rust allows you to write a system code that is very fast and efficient. 
 
 # System programming
 
-Few months ago I wrote a short article about system programming in Rust. Looking at the code right now I feel a hint of embarrassment but I at least hope I can rectify all my inefficiency here. First of all I try not to nest `match` directives when there is no clear need for it. Second thing - use proper crates where possible - I've already mentioned [nix](https://crates.io/crates/nix) crate but there are few others worth mentioning. Good example is [clap](https://crates.io/crates/clap) for parsing command line arguments. Also, don't forget that the [standard library](https://doc.rust-lang.org/std/) also has a lot of interesting elements - like for example the [BTreeSet](https://doc.rust-lang.org/std/collections/struct.BTreeSet.html) collection that we use in our mutator to keep track of unique traces.
-
-> I hope to explore the topic of system programming in Rust more in future articles that are not necessarily focused on fuzzing.
+Few months ago I wrote a short article about system programming in Rust[^1]. Looking at the code right now I feel a hint of embarrassment but I at least hope I can rectify all my inefficiency here. First of all I try not to nest `match` directives when there is no clear need for it. Second thing - use proper crates where possible - I've already mentioned [nix](https://crates.io/crates/nix) crate but there are few others worth mentioning. Good example is [clap](https://crates.io/crates/clap) for parsing command line arguments. Also, don't forget that the [standard library](https://doc.rust-lang.org/std/) also has a lot of interesting elements - like for example the [BTreeSet](https://doc.rust-lang.org/std/collections/struct.BTreeSet.html) collection that we use in our mutator to keep track of unique traces.
 
 # Target practice
 
@@ -48,7 +44,7 @@ The premise of it is simple - the moment we provide this function with a pointer
 
 Some people might say this is not a very realistic pattern but you might be actually surprised. Compilers actually tend to implement parsing and recognizing certain keywords this way. Take a look at [Crafting Interpreters](https://craftinginterpreters.com/scanning-on-demand.html#identifiers-and-keywords) book, particularly a chapter that teaches us how to parse keywords. It turns out that a few nested `switch` statements is the fastest method to do it. Many real language parsers are using similar techniques and that makes them great for fuzzing and increasing coverage.
 
-Still, I strongly believe that to truly understand, and most importantly test your fuzzer you need to run it against that target that offers proper introspection and as few surprises as possible. Testing your tools against black box offers a very murky picture of what is actually happening - maybe you are not finding crashes because of some tiny flaw[^1] in your mutation strategy. Such flaws might easily be dismissed by assuming that program you know very little of, doesn't actually have vulnerabilities.
+Still, I strongly believe that to truly understand, and most importantly test your fuzzer you need to run it against that target that offers proper introspection and as few surprises as possible. Testing your tools against black box offers a very murky picture of what is actually happening - maybe you are not finding crashes because of some tiny flaw[^2] in your mutation strategy. Such flaws might easily be dismissed by assuming that program you know very little of, doesn't actually have vulnerabilities.
 
 # Main loop
 
@@ -141,7 +137,7 @@ pub fn run_parent(pid: Pid, mapping: &HashMap<u64, i64>) -> ParentStatus {
 
 #  Mutation engine
 
-A set of biggest changes can be seen in our mutation engine. The cornerstone of it are two structures  - `Sample` and `Mutator`. Let's start our description with the first one.
+A set of biggest changes can be seen in our mutation engine. It is comprised of two structures  - `Sample` and `Mutator`. Let's start by looking at the first one.
 
 ```rust
 pub struct Sample {
@@ -152,9 +148,9 @@ pub struct Sample {
 }
 ```
 
-Each `Sample` holds the data in the form of a byte array. It can be either materialized as a file,  passed to a program as an argument or even sent over the network if that is what we want to implement. Other fields are mostly used for coverage tracking - version records how many successful[^2] mutation a given sample had and method holds the latest type of mutation that occurred. Both have no practical meaning as far as mutation engine is concerned - at least for now. `Sample` that was executed by the program gains the trace generated during the run.
+Each `Sample` holds the data in the form of a byte array. It can be either materialized as a file,  passed to a program as an argument or even sent over the network if that is what we want to implement. Other fields are mostly used for coverage tracking - version records how many successful[^3] mutation a given sample had and method holds the latest type of mutation that occurred. Both have no practical meaning as far as mutation engine is concerned - at least for now. Sample that was executed by the program gains the trace that consists of addresses of block visited during the run.
 
-Samples do not exist in vacuum but are kept inside `Mutator`.
+`Mutator` holds all the samples that are passed to a program.
 
 ```rust
 pub struct Mutator {
@@ -169,7 +165,7 @@ pub struct Mutator {
 }
 ```
 
-Compared to our previous implementation in Python this implementation of mutation engine was greatly simplified. Instead of a convoluted mess of four different sample containers tied together with fit and mutation functions we only have two.  I will explain the logic behind them in the section about coverage.  Last thing worth mentioning is the swappable [Random Number Generator](https://docs.rs/rand/0.8.3/rand/trait.Rng.html) that we use to randomly mutate our samples.
+Compared to our previous implementation in Python this implementation of mutation engine is greatly simplified. Instead of a convoluted mess of four different sample containers tied together with fit and mutation functions we only have two.  I will explain the logic behind them in the section about coverage.  Last thing worth mentioning is the swappable [Random Number Generator](https://docs.rs/rand/0.8.3/rand/trait.Rng.html) that we use to randomly mutate our samples.
 
 Speaking about actual mutations the implementation is fairly agnostic.
 
@@ -183,7 +179,7 @@ fn mutate(&mut self) {
 }
 ```
 
-Basically samples from the corpus mutate themselves and create new copies inside `samples` container. Thanks to that we can implement `Sample` [trait](https://doc.rust-lang.org/book/ch10-02-traits.html) and mutate various kinds of samples with unique strategies like for example grammar driven one. 
+Basically samples from the corpus mutate themselves and create new copies inside `samples` container. Thanks to that we can later implement appropriate [trait](https://doc.rust-lang.org/book/ch10-02-traits.html) and mutate various kinds of samples with unique strategies like for example grammar driven one. 
 
 Speaking about mutation strategy of a `Sample`:
 
@@ -245,5 +241,6 @@ I hope that you've enjoyed the ride so far and stay tuned for more.
 
 ## Footnotes 
 
-[^1]:  In my initial mutator I've failed to properly calculate boundaries during inserting of blocks so my mutator never actually appended blocks at the end of the data being mutated. Would have probably missed that if not the strong expectation of a certain result failed to be satisfied.
-[^2]: Successful in this case is defined as leading to new unique coverage.
+[^1]: I hope to explore the topic of system programming in Rust more in future articles that are not necessarily focused on fuzzing.
+[^2]:  In my initial mutator I've failed to properly calculate boundaries during inserting of blocks so my mutator never actually appended blocks at the end of the data being mutated. Would have probably missed that if not the strong expectation of a certain result failed to be satisfied.
+[^3]: Successful in this case is defined as leading to new unique coverage.
