@@ -5,8 +5,8 @@
 body {
     margin: 60px auto;
     max-width: 60rem;
-    margin-left: 3em;
-    margin-right: 3em;
+    padding-left: 3em;
+    padding-right: 3em;
     font-family: 'Lato', sans-serif;
 }
 
