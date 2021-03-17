@@ -49,21 +49,19 @@ a {
 
 a.footnote {
   border-bottom: none;
-  padding-left: 0.2em;
+  padding-left: 0.1em;
+  padding-right: 0.2em;
   font-weight: bold;
 }
 
-a.footnote:active {
-  border-bottom: none;
+a.footnote::after {
+  content: none;
 }
 
-a.reversefootnote {
-  border-bottom: none;
+a.reversefootnote::after {
+  content: none;
 }
 
-a.reversefootnote {
-  border-bottom: none;
-}
 
 h1 {
     font-size: 2em;
@@ -139,19 +137,14 @@ ol li {
 
 ol li > p {
   margin:0;
+  padding-bottom: 1rem;
 }
 
 ol li::before {
-  content: counter(ref-counter);
+  content: counter(ref-counter)"°";
   margin-right: 0.5rem;
-  background: #000000;
-  color: white;
-  width: 1.2em;
-  height: 1.2em;
-  border-radius: 50%;
-  display: inline-grid;
-  place-items: center;
-  line-height: 1.2em;
+  font-weight: bold;
+
 }
 
 /* Footer style */

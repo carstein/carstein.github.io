@@ -243,7 +243,7 @@ In the upcoming parts I will focus on small ways to speed up the fuzzing process
 
 I hope that you've enjoyed the ride so far and stay tuned for more.
 
-## References
+## Footnotes 
 
-[^1]:  In my initial mutator I've failed to properly calculate boundaries during inserting of blocks so my mutator never actually *appended* blocks at the end of the data being mutated. Would have probably missed that if not the strong expectation of a certain result failed to be satisfied.
+[^1]:  In my initial mutator I've failed to properly calculate boundaries during inserting of blocks so my mutator never actually appended blocks at the end of the data being mutated. Would have probably missed that if not the strong expectation of a certain result failed to be satisfied.
 [^2]: Successful in this case is defined as leading to new unique coverage.
