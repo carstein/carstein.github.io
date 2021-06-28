@@ -4,8 +4,6 @@ title: "Doing technical interviews"
 date: 2021-06-28
 ---
 
-# Doing technical interviews 
-
 Initial idea behind this *blog* was to post only technical content. This steamed from my distrust for people who only post *opinion* pieces not accompanied by any technical content to assert their knowledge or experience. Admittedly, I was such a person a long time ago and the less I knew the stronger opinions I was posting. Realizing that I've promised myself to focus on technical content because at least it has certain intellectual honesty.
 
 Time has passed and I've started believing that after all, I might have more experience now that would actually entitle me to have opinions about various topics. Twitter, my social platform of choice, does not encourage or even plainly support publishing long form and does not encourage more nuanced discussions. All of this brings us to this article - a first opinion piece on this blog. 
