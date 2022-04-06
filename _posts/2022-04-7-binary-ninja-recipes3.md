@@ -4,7 +4,6 @@ title: "Binary Ninja Recipes #3"
 date: 2022-04-06
 ---
 
-# Binary Ninja Recipes #3
 
 Few weeks ago a friend of mine invited me to give a small workshop about Binary Ninja - vulnerability modeling to be specific. I was super happy to oblige because occasions like that motivate me to actually work on something. I can probably write a separate article about organizing a workshops but for this one I have something different in mind. 
 
