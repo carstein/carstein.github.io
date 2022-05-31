@@ -198,11 +198,8 @@ code {
 }
 
 code.highlighter-rouge {
-  background-color: #eef1fe;
-  color: black;
+  color: #33aaff;
   padding: 1px 1px 1px;
-  border-radius: 0.3rem;
-  border: 1px dashed #a4a4a4;
 }
 
 .highlighter-rouge {
