@@ -2,8 +2,8 @@
 .highlight .hll { background-color: #ffffcc }
 .highlight { background: #ffffff; }
 .highlight .c { color: #888888; font-style: italic } /* Comment */
-.highlight .err { color: #FF0000 } /* Error */
-.highlight .k { color: #0000ff } /* Keyword */
+.highlight .err { color: #33aaff  } /* Error */
+.highlight .k { color: #33aaff  } /* Keyword */
 .highlight .n { color: #000000 } /* Name */
 .highlight .ch { color: #888888; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #888888; font-style: italic } /* Comment.Multiline */
@@ -11,12 +11,12 @@
 .highlight .cpf { color: #888888; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #888888; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #888888; font-style: italic } /* Comment.Special */
-.highlight .kc { color: #0000ff } /* Keyword.Constant */
-.highlight .kd { color: #0000ff } /* Keyword.Declaration */
-.highlight .kn { color: #0000ff } /* Keyword.Namespace */
-.highlight .kp { color: #0000ff } /* Keyword.Pseudo */
-.highlight .kr { color: #0000ff } /* Keyword.Reserved */
-.highlight .kt { color: #0000ff } /* Keyword.Type */
+.highlight .kc { color: #33aaff  } /* Keyword.Constant */
+.highlight .kd { color: #33aaff  } /* Keyword.Declaration */
+.highlight .kn { color: #33aaff  } /* Keyword.Namespace */
+.highlight .kp { color: #33aaff  } /* Keyword.Pseudo */
+.highlight .kr { color: #33aaff  } /* Keyword.Reserved */
+.highlight .kt { color: #33aaff  } /* Keyword.Type */
 .highlight .m { color: #33aaff } /* Literal.Number */
 .highlight .s { color: #55aa22 } /* Literal.String */
 .highlight .na { color: #000000 } /* Name.Attribute */
@@ -33,7 +33,7 @@
 .highlight .py { color: #000000 } /* Name.Property */
 .highlight .nt { color: #000000 } /* Name.Tag */
 .highlight .nv { color: #000000 } /* Name.Variable */
-.highlight .ow { color: #0000ff } /* Operator.Word */
+.highlight .ow { color: #33aaff  } /* Operator.Word */
 .highlight .mb { color: #33aaff } /* Literal.Number.Bin */
 .highlight .mf { color: #33aaff } /* Literal.Number.Float */
 .highlight .mh { color: #33aaff } /* Literal.Number.Hex */
