@@ -88,7 +88,7 @@ Let's say, that you would like to see what has happened with the program after y
 
 ```rust
     // this code goes after starting the process
-		match waitpid(Pid::from_raw(child.id() as i32), None) {
+    match waitpid(Pid::from_raw(child.id() as i32), None) {
         Ok(WaitStatus::Exited(pid, status)) => {
             println!("Program {} exited normally with code {}",pid, status);
         }
@@ -114,13 +114,13 @@ The goal of the code, last time I wrote it was to be an instrumentation module f
 ```rust
 // Partial snippet of code that normally should be chained together
 // with the Command::new
-				.pre_exec(|| {
-          	ptrace::traceme()
-          	.expect("[!] cannot trace process");
-            personality(linux_personality::ADDR_NO_RANDOMIZE)
-            .expect("[!] cannot set personality");
-            Ok(())
-        })
+    .pre_exec(|| {
+        ptrace::traceme()
+        .expect("[!] cannot trace process");
+        personality(linux_personality::ADDR_NO_RANDOMIZE)
+        .expect("[!] cannot set personality");
+        Ok(())
+    })
 ```
 
 ### Setting a breakpoint
@@ -129,9 +129,9 @@ If you try to run this code you will notice, that suddenly our `waitpid()` repor
 
 ```rust
 // This is part of the waitpid() match instruction
-				Ok(WaitStatus::Stopped(pid, signal)) => {
+        Ok(WaitStatus::Stopped(pid, signal)) => {
             println!("Program {} received {} event", pid, signal);
-          	handle_sigstop(pid);
+            handle_sigstop(pid);
         }
 
 // This is a separate function that should be defined outside of main
@@ -193,7 +193,6 @@ fn handle_sigstop(pid: Pid, saved_values: &HashMap<u64, u64>) {
             // rewind rip
             regs.rip -= 1;
             ptrace::setregs(pid, regs).expect("Error rewinding RIP");
-
         }
         None => print!("Nothing saved here"),
     }
