@@ -4,6 +4,7 @@ title: "System programming in Rust, take 2"
 date: 2022-05-29
 tags:
 - System programming
+- Rust
 ---
 
 A friend of mine once said - *"If you are not embarrassed by the work you've done two years ago, you are getting complacent"*. Well, I'm certainly embarrassed. It does not mean I'm not getting complacent but the embarrassment is there.

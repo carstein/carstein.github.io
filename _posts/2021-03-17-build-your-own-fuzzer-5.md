@@ -4,6 +4,7 @@ title: "Build simple fuzzer - part 5"
 date: 2021-03-13
 tags:
 - Fuzzing
+- Rust
 ---
 
 It has been a while since I wrote the last part of the [Build Simple Fuzzer](https://carstein.github.io/2020/05/21/writing-simple-fuzzer-4.html) series. Due to personal reasons I had some issues finding time to continue with it. On top of that, having a semi-working fuzzer deprived me of will to continue - mainly because there were no obvious avenues where to direct my attention. I'm far from thinking that my fuzzer was good or complete but it was working, finding shallow bugs and the next step required much more work than I was able to pour into it. At least at that time.

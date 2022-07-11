@@ -25,6 +25,25 @@ a {
   text-decoration: none;
 }
 
+/* Tags  style */
+.tags {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.tag {
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+  border: 2px solid #333;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+
+
 .post a {
     color: inherit;
 }
