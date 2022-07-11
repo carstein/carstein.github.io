@@ -2,6 +2,8 @@
 layout: post
 title: "Worth listening to"
 date: 2019-03-20
+tags:
+- Short
 ---
 
 When I've created this blog my main goal was to write technical notes. Well, not everything I work on is worth writing about therefore I must switch context and fill this column with something else. Don't despair thou, technical posts will soon follow.

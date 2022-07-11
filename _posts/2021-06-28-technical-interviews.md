@@ -2,6 +2,8 @@
 layout: post
 title: "Doing technical interviews"
 date: 2021-06-28
+tags:
+- Short
 ---
 
 Initial idea behind this *blog* was to post only technical content. This steamed from my distrust for people who only post *opinion* pieces not accompanied by any technical content to assert their knowledge or experience. Admittedly, I was such a person a long time ago and the less I knew the stronger opinions I was posting. Realizing that I've promised myself to focus on technical content because at least it has certain intellectual honesty.

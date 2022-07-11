@@ -2,7 +2,8 @@
 layout: post
 title: "Build simple fuzzer - part 4"
 date: 2020-05-21
-
+tags:
+- Fuzzing
 ---
 
 The right way to start this part is by apologizing to all of you who waited so long for it. I had a pretty busy and yet not terribly productive week. Result was a grave need for rest and reset - that caused a delay in writing this blog post. Thank you all for the patience and I hope you will enjoy the fourth part of *Build your own fuzzer* series.

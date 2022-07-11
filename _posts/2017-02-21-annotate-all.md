@@ -2,6 +2,8 @@
 layout: post
 title: "Annotate all the things"
 date: 2017-02-21
+tags:
+- Binary Ninja
 ---
 I don't do reverse engineering for a living but I still like to peek under the hood of binaries from time to time. Either because of testing, looking for bugs or just for fun. Problem is, that IDA Pro, de-facto standard tool for any Reverse Engineer is prohibitively expensive for most of the people. On top of that, licensing policy is very annoying and illogical. But enough about IDA Pro - let's talk about new contender on this field - [Binary Ninja](https://binary.ninja/).
 

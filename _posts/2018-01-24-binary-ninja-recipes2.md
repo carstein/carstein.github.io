@@ -2,6 +2,8 @@
 layout: post
 title: "Binary Ninja Recipes #2"
 date: 2018-01-24
+tags:
+- Binary Ninja
 ---
 This time I want to explore two problems I saw before while writing plugins for Binary Ninja. First problem, steaming from development of [Annotator](https://github.com/carstein/Annotator) plugin (and I need to implement what I've learned here) and second is influenced by paper on [Static Analysis](https://cs.au.dk/~amoeller/spa/spa.pdf) and theory of lattices (if of course I've understood it correctly).
 

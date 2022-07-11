@@ -2,6 +2,8 @@
 layout: post
 title: "Binary Ninja Recipes"
 date: 2017-11-29
+tags:
+- Binary Ninja
 ---
 What is the value of a blog if you don't post something from time to time. But what to publish when you only recognize two kinds of knowledge: something you know, therefore it is trivial and something you don't know, therefore you shouldn't be writing about that? Well, today is the time for some trivial knowledge - Binary Ninja recipes.
 

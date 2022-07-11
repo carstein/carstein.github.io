@@ -2,6 +2,8 @@
 layout: post
 title: "Binary Ninja UI Plugin, take 1"
 date: 2019-10-27
+tags:
+- Binary Ninja
 ---
 
 # Motivation

@@ -2,6 +2,8 @@
 layout: post
 title: "Build simple fuzzer - part 2"
 date: 2020-04-25
+tags:
+- Fuzzing
 ---
 
 

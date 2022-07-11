@@ -2,6 +2,8 @@
 layout: post
 title: "System programming with Rust"
 date: 2020-11-18
+tags:
+- System programming
 ---
 
 Back in May I started a blog post [series](https://carstein.github.io/2020/04/18/writing-simple-fuzzer-1.html) explaining how to write simple fuzzers. Few episodes down this path I've faced a difficult challenge - do I continue writing my fuzzer using Python or should I switch to some other, more suitable language.

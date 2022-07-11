@@ -2,6 +2,8 @@
 layout: post
 title: "Build simple fuzzer - part 3"
 date: 2020-05-02
+tags:
+- Fuzzing
 ---
 
 Welcome to part three of my mini series about fuzzing.  I'm glad that so many of you find this content interesting enough to come back for more. This, more than anything encourages me to keep writing.
