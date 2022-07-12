@@ -7,7 +7,7 @@ title: 128nops and counting
   <ul class="posts">
     <h2>Articles</h2>
     {% for post in site.posts %}
-      {% unless post.tags contains "short" %}
+      {% unless post.tags contains "Short" %}
       <li>
         <a href="{{post.url}}" title="{{post.title}}">{{post.title}}</a>
         <span class="post_date">{{ post.date | date_to_string }}</span>
@@ -17,10 +17,10 @@ title: 128nops and counting
   </ul>
 </div>
 <div class="shorts">
-  <h2>Shorts</h2>
   <ul class="posts">
+    <h2>Shorts</h2>
     {% for post in site.posts %}
-      {% if post.tags contains "short" %}
+      {% if post.tags contains "Short" %}
       <li>
         <a href="{{post.url}}" title="{{post.title}}">{{post.title}}</a>
         <span class="post_date">{{ post.date | date_to_string }}</span>
