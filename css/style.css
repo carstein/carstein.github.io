@@ -229,11 +229,11 @@ code.highlighter-rouge {
 /* Icons */
 @font-face {
   font-family: 'icomoon';
-  src:  url('assets/fonts/icomoon.eot?75kcr0');
-  src:  url('assets/fonts/icomoon.eot?75kcr0#iefix') format('embedded-opentype'),
-    url('assets/fonts/icomoon.ttf?75kcr0') format('truetype'),
-    url('assets/fonts/icomoon.woff?75kcr0') format('woff'),
-    url('assets/fonts/icomoon.svg?75kcr0#icomoon') format('svg');
+  src:  url('/assets/fonts/icomoon.eot?75kcr0');
+  src:  url('/assets/fonts/icomoon.eot?75kcr0#iefix') format('embedded-opentype'),
+    url('/assets/fonts/icomoon.ttf?75kcr0') format('truetype'),
+    url('/assets/fonts/icomoon.woff?75kcr0') format('woff'),
+    url('/assets/fonts/icomoon.svg?75kcr0#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -255,6 +255,7 @@ code.highlighter-rouge {
 }
 
 .icon-tag:before {
-  content: "\e935";
+  content: "\e900";
+  margin-right: 0.5em;
 }
 
