@@ -9,8 +9,8 @@ title: 128nops and counting
     {% for post in site.posts %}
       {% unless post.tags contains "Short" %}
       <li>
+        <span class="post_date">[{{ post.date | date_to_string }}]</span>
         <a href="{{post.url}}" title="{{post.title}}">{{post.title}}</a>
-        <span class="post_date">{{ post.date | date_to_string }}</span>
       </li>
       {% endunless %}
     {% endfor %}
