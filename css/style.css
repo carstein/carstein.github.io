@@ -25,6 +25,40 @@ a {
   text-decoration: none;
 }
 
+/* Post list */
+.shorts {
+	float: right;
+	width: 50%;
+}
+
+.articles {
+	float: left;
+	width: 50%;
+}
+
+ul.posts { 
+  margin: 20px auto 40px; 
+  font-size: 1.2em;
+}
+
+ul.posts li {
+  list-style: none;
+  line-height: 1.5em;
+}
+
+ul.posts a {
+  color: #333;
+}
+
+ul.posts a:hover {
+  font-weight: bold;
+}
+
+.post_date {
+  color: #333;
+  float: right;
+}
+
 /* Tags  style */
 .tags {
   padding-top: 1em;
@@ -42,45 +76,7 @@ a {
   border-radius: 0.25rem;
 }
 
-
-
-.post a {
-    color: inherit;
-}
-
-.post a::after {
-    position: relative;
-    content: "﻿°";
-    margin-left: 0.1em;
-    font-size: 90%;
-    font-weight: bold;
-    top: -0.1em;
-    color: rgb(153, 51, 51);
-}
-
-.post a:hover {
-  background: #fbf3f3;
-  transition-property: background;
-  transition-duration: 0.2s;
-
-  border-radius: 8px;
-}
-
-a.footnote {
-  border-bottom: none;
-  padding-left: 0.1em;
-  padding-right: 0.2em;
-  font-weight: bold;
-}
-
-a.footnote::after {
-  content: none;
-}
-
-a.reversefootnote::after {
-  content: none;
-}
-
+/* Post style */
 
 h1 {
     font-size: 2em;
@@ -175,6 +171,7 @@ ol li::before {
 /* Footer style */
 
 footer {
+    clear: both;
     border-top: 1px solid #d5d5d5;
     font-size: 1em;
 }
@@ -184,29 +181,19 @@ footer a {
   color: #333;
 }
 
-/* Styles for posts list */
-
-ul.posts { 
-    margin: 20px auto 40px; 
-    font-size: 1.5em;
+a.footnote {
+  border-bottom: none;
+  padding-left: 0.1em;
+  padding-right: 0.2em;
+  font-weight: bold;
 }
 
-ul.posts li {
-    list-style: none;
-    line-height: 1.5em;
+a.footnote::after {
+  content: none;
 }
 
-ul.posts a {
-    color: #333;
-}
-
-ul.posts a:hover {
-    font-weight: bold;
-}
-
-.post_date {
-    color: #333;
-    float: right;
+a.reversefootnote::after {
+  content: none;
 }
 
 /* Main Code style */
@@ -259,4 +246,3 @@ code.highlighter-rouge {
   margin-right: 0.5em;
   font-size: 0.8em;
 }
-
