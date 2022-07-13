@@ -56,6 +56,7 @@ ul.posts a:hover {
 
 .post_date {
   color: darkgray;
+  font-family: Hack, monospace;
 }
 
 /* Tags  style */
