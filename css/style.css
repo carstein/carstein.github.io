@@ -50,6 +50,8 @@ ul.posts a {
   color: #333;
 }
 
+
+
 ul.posts a:hover {
   font-weight: bold;
 }
@@ -130,6 +132,28 @@ blockquote {
   border-left: 0.5em solid;
   border-left-color: gray;
   padding-left: 1em;
+}
+
+.post a {
+    color: inherit;
+}
+
+.post a::after {
+    position: relative;
+    content: "﻿°";
+    margin-left: 0.1em;
+    font-size: 90%;
+    font-weight: bold;
+    top: -0.1em;
+    color: rgb(153, 51, 51);
+}
+
+.post a:hover {
+  background: #fbf3f3;
+  transition-property: background;
+  transition-duration: 0.2s;
+
+  border-radius: 8px;
 }
 
 blockquote > p {
