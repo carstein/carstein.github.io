@@ -7,8 +7,6 @@ tags:
 - Rust
 ---
 
-# System programming in rust - part 2
-
 ## Little intro
 
 Some time ago I promised to write more about System Programming in Rust. The only problem was - I didn't have a good idea what specifically I can write about. Sure, I use Rust now and then but beyond ptrace and shared memory access (need to finish that Fuzzing series) my experiences with system programming were fairly limited. Or at least that was my impression.
