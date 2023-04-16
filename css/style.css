@@ -59,6 +59,7 @@ ul.posts a:hover {
 .post_date {
   color: darkgray;
   font-family: Hack, monospace;
+  font-size: 0.9em;
 }
 
 /* Tags  style */
@@ -76,6 +77,8 @@ ul.posts a:hover {
   border: 1px solid #333;
   padding: 0.375rem 0.75rem;
   border-radius: 0.25rem;
+  margin-right: 0.5em;
+  box-shadow: 5px 5px 10px 2px rgba(0,0,0,0.3);
 }
 
 /* Post style */
