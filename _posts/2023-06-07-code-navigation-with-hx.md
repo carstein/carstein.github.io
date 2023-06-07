@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Code navigation with hx"
-date: 2023-06-97
+date: 2023-06-07
 tags:
 - Tooling
 ---
