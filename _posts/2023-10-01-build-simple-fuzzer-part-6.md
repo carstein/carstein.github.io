@@ -30,7 +30,7 @@ The basic routine when it comes to shared memory is that in one process you open
 
 We will begin by implementing two small C programs that will communicate with each other using this interface. First program called *setter* is presented below.
 
-```C
+```c
 #include <fcntl.h>
 #include <stdio.h>
 #include <string.h>
@@ -199,7 +199,7 @@ Rest of the fuzzing engine, for now, is not very interesting - we basically just
 # Instrumentation
 Now we are reaching the hardest part - how to convince the compiler to insert a set of instructions of our choosing into the binary composed of the source we have very little intention of modifying. What would be previously a 12-part series of compiler internals (that would probably be way over my head and cost me sanity), thanks to the great people responsible for clang and llvm, will be just a few lines of code and one weird makefile. Turns out that clang already comes with the interface for writing code [instrumentation](https://clang.llvm.org/docs/SanitizerCoverage.html). Lets see how this works in practice by reading this simple code:
 
-```C
+```c
 #include <stdio.h>
 #include <stdint.h>
 #include <sanitizer/coverage_interface.h>
@@ -225,7 +225,7 @@ We see that there are two major functions that we define: `__sanitizer_cov_trace
 
 Knowing what we want to write it's time we look at how to combine it with some other program. Admittedly, I haven't had a time yet to use it against some real project as I was mostly working with samples I wrote on my own. Still, the same principles will apply and probably modifying at least one Makefile is unavoidable. In the meantime let us look at the one I wrote for the purpose of this article.
 
-```Makefile
+```makefile
 CC=clang
 CFLAGS=-Wall -lrt
 
@@ -256,7 +256,7 @@ One thing worth explaining is the `no-prune` option. Looking at the binary compi
 # Putting it all together
 We've reached the phase where we adjust the instrumentation code to work with our fuzzer. We can see how it is done in the code below.
 
-```C
+```c
 #include <fcntl.h>
 #include <stddef.h>
 #include <stdint.h>
