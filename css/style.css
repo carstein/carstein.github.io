@@ -25,6 +25,28 @@ a {
   text-decoration: none;
 }
 
+ /* Fixed navigation */                                                                                       
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0; 
+  z-index: 9999;
+  width: 100%;
+  height: 2rem;
+  background-color: white;
+  border-bottom: 1px solid black;
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0,.8);
+}
+
+.fixed-nav-bar a {
+  text-decorations: none;                                                                                    
+  float: right;
+  margin-right: 2rem;
+  font-size: 1.5em; 
+  font-weight: bold;
+  color: #991f00;
+}            
+
 /* Post list */
 .shorts {
 	float: right;
@@ -100,8 +122,6 @@ h1.post_title {
   font-size: 3em;
   color: #991f00;
   margin: 0;
-  position: relative;
-  left: -1em;
 }
 
 h3 {
