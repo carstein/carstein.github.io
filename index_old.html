@@ -1,0 +1,31 @@
+---
+layout: default
+title: 128nops and counting
+---
+<h1 class="title"> {{page.title}} </h1>
+<div class="articles">
+  <ul class="posts">
+    <h2>Articles</h2>
+    {% for post in site.posts %}
+      {% unless post.tags contains "Short" %}
+      <li>
+        <span class="post_date">[{{ post.date | date_to_string }}]</span>
+        <a href="{{post.url}}" title="{{post.title}}">{{post.title}}</a>
+      </li>
+      {% endunless %}
+    {% endfor %}
+  </ul>
+</div>
+<div class="shorts">
+  <ul class="posts">
+    <h2>Shorts</h2>
+    {% for post in site.posts %}
+      {% if post.tags contains "Short" %}
+      <li>
+        <span class="post_date">[{{ post.date | date_to_string }}]</span>
+        <a href="{{post.url}}" title="{{post.title}}">{{post.title}}</a>
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

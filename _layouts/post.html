@@ -1,15 +1,23 @@
 ---
 layout: default
 ---
-<h1 class="post_title"> <a href="https://carstein.github.io">⇐</a> {{ page.title }}</h1>
-<p class="meta">{{ page.date | date_to_string }}</p>
+<table class="header">
+  <tr>
+	  <td rowspan="2" class="width-auto">
+		  <h1 class="title">{{ page.title }}</h1>
+			<span class="subtitle">{{ page.subtitle }}</span>
+		</td>
+		<th>Date</th>
+		<td class="width-min"><time style="white-space: pre;">{{ page.date | date_to_string }}</time></td>
+	</tr>
+	<tr>
+	  <th>Category</th>
+		<td class="width-min">{{ page.category }}</td>
+	</tr>
+</table>
 
-<div class="tags">
-  {% for tag in page.tags %}
-    <span class="tag icon-tag">{{ tag }}</span>
-{% endfor %}
-</div>
+{{ content }}
 
-<div class="post">
-  {{ content }}
-</div>
+<hr>
+
+by <a href="https://twitter.com/@carste1n">@carstein</a>

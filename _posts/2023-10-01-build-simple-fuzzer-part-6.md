@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "Build simple fuzzer - part 6"
+title: "Build simple fuzzer"
+subtitle: "part 6"
 date: 2023-10-01
+category: "Fuzzing"
 tags:
 - Fuzzing
 - Rust

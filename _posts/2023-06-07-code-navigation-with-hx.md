@@ -21,7 +21,7 @@ Another action that I perform quite frequently is finding a definition/declarati
 
 > A little bit about the semantic used in this article - whenever I tell you to press `xy` it means to press letter `x` followed by the letter `y` - they don't have to be pressed simultaneously, just follow each other. 
 
-To do that get the cursor on a code symbol and press `gd` or `gD` - depending if you want to get declaration or definition. You might want to ask what is the difference - in all the languages except *C/C++* there is none. 
+To do that get the cursor on a code symbol and press `gd` or `gD` - depending if you want to get declaration or definition. You might want to ask what is the difference - in all the languages except **C/C++** there is none. 
 
 ## Show references
 Once you have the function reviewed you probably want to check where else it is being used. To find out get the cursor on the function name and press `gr`. 
