@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "Build simple fuzzer - part 1"
+title: "Build simple fuzzer"
+subtitle: "part1"
 date: 2020-04-18
+category: "Fuzzing"
 tags:
 - Fuzzing
 ---

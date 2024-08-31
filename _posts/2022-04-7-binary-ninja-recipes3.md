@@ -2,6 +2,7 @@
 layout: post
 title: "Binary Ninja Recipes #3"
 date: 2022-04-06
+category: "Binary Ninja"
 tags:
 - Binary Ninja
 ---

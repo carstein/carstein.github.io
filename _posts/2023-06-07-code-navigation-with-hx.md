@@ -2,6 +2,7 @@
 layout: post
 title: "Code navigation with hx"
 date: 2023-06-07
+category: "Engineering"
 tags:
 - Tooling
 ---

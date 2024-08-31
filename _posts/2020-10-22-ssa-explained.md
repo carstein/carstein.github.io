@@ -2,6 +2,7 @@
 layout: post
 title: "SSA Explained"
 date: 2020-10-22
+category: "Binary Ninja"
 tags:
 - Binary Ninja
 ---

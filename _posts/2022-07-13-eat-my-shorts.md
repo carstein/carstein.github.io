@@ -2,6 +2,7 @@
 layout: post
 title: "Eat my shorts"
 date: 2022-07-13
+category: "Short"
 tags:
 - Short
 ---

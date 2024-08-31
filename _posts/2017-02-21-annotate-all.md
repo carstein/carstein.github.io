@@ -2,6 +2,7 @@
 layout: post
 title: "Annotate all the things"
 date: 2017-02-21
+category: "Binary Ninja"
 tags:
 - Binary Ninja
 ---

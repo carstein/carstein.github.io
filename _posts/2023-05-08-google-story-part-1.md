@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "Google story - part 1"
+title: "Google story" 
+subtitle: "part 1"
 date: 2023-05-08
+category: "Short"
 tags:
 - Short
 ---

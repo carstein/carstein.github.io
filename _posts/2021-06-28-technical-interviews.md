@@ -2,6 +2,7 @@
 layout: post
 title: "Doing technical interviews"
 date: 2021-06-28
+category: "Short"
 tags:
 - Short
 ---

@@ -1,7 +1,9 @@
 ---
 layout: post
 title: "System programming with Rust"
+subtitle: "part 1"
 date: 2020-11-18
+category: "Engineering"
 tags:
 - System programming
 - Rust

@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "System programming in Rust, take 2"
+title: "System programming in Rust"
+subtitle: "part 1 (take 2)"
 date: 2022-05-29
+category: "Engineering"
 tags:
 - System programming
 - Rust

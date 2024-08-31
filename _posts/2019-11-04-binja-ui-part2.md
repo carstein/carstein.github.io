@@ -2,6 +2,7 @@
 layout: post
 title: "Binary Ninja UI Plugin, take 2"
 date: 2019-11-04
+category: "Binary Ninja"
 tags:
 - Binary Ninja
 ---
