@@ -32,7 +32,7 @@ title: 128nops and counting
   {% for post in site.posts %}
     {% unless post.tags contains "Short" %}
     <tr>
-      <td><a href="{{post.url}}" title="{{post.title}}">{{post.title}}</a></td>
+      <td><a href="{{post.url}}" title="{{post.title}}">{{post.title}} {{post.subtitle}}</a></td>
       <td class="width-min"><time style="white-space: pre;">{{ post.date | date_to_string }}</time></td>
     </tr>
     {% endunless %}
