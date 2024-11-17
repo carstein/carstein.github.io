@@ -3,6 +3,8 @@ layout: post
 title: "Gone places"
 date: 2024-11-17
 category: "Short"
+tags:
+- Short
 ---
 
 > Originally this was just a series of separate notes on my Mastodon profile. I've decided, in case the site disappear, to grant them more permanent form and post them on this blog.
