@@ -11,7 +11,7 @@ To do so just add `#[repr(c)]` to the struct declaration. Thank you. Well, we ca
 
 ## Background
 How did we even end up here and why would we even translate structures between C and Rust? When you do any kind of system programming you will be talking to a kernel. A lot. Sadly you can't do it over Protocol Buffers. Or even Cap'n'Proto. Or, thank god for that, over JSON and XML. You often have to send a pointer to a chunk of memory  through some *syscall* or *ioctl*. Examples? Here you are..
-```C
+```c
   kvm->mem.slot = 0;
   kvm->mem.guest_phys_addr = 0;
   kvm->mem.memory_size = kvm->ram_size;
